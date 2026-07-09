@@ -13,7 +13,7 @@ flowchart LR
     subgraph MGMT["MGMT zone"]
         SIEM["Wazuh SIEM"]
     end
-    subgraph LAB["LAB zone"]
+    subgraph LAB["LAB zone - No internet"]
         KALI["Kali - attacker"]
         VICTIM["Metasploitable 2 - victim"]
     end
@@ -66,7 +66,7 @@ homelab-soc/
  
 ## Disclaimer
  
-Attacks conducted in this project target machines I own, on an isolated network.
+Attacks conducted in this project target machines I own, on an isolated network with no internet route.
  
 
 
