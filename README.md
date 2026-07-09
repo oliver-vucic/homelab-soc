@@ -57,6 +57,7 @@ Full limitation details in the [architecture doc](docs/01-architecture.md)
 ## Repository Layout
 ```
 homelab-soc/
+├── main/        # contains README file
 ├── docs/        # architecture, design decisions (ADRs), build docs
 ├── configs/     # sanitised configs: OPNsense, Wazuh rules/decoders, Proxmox networking
 ├── exercises/   # attack scenarios and the detections written for them
