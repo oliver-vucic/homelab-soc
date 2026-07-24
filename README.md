@@ -15,7 +15,7 @@ flowchart LR
     end
     subgraph LAB["LAB zone - No internet"]
         KALI["Kali - attacker"]
-        VICTIM["Metasploitable 2 - victim"]
+        VICTIM["Victim VM - victim"]
     end
     FW["OPNsense firewall<br/>default-deny inter-zone"]
     FW_WAN --- FW
@@ -29,7 +29,7 @@ Three zones on one hypervisor, all inter-zone traffic routed and filtered by a d
 
 
 - **MGMT** — the trusted zone. Hosts the Wazuh SIEM.
-- **LAB** — the untrusted zone. Attacker (Kali) and victim (Metasploitable 2).
+- **LAB** — the untrusted zone. Attacker (Kali) and victim (Victim VM).
 - **WAN** — uplink to the home LAN.
 
 Between the MGMT and the LAB zones, the only permitted traffic is the telemetry logs from the victims Wazuh agent being sent to the Wazuh SIEM (LAB → MGMT). Everything else crossing a zone boundary is denied. Full topology, addressing, data flows, trust boundaries, and threat model are documented in docs/01-architecture.md.
@@ -41,7 +41,7 @@ Between the MGMT and the LAB zones, the only permitted traffic is the telemetry 
 | OPNsense | Firewall / router between zones |
 | Wazuh | SIEM — log collection, rules, MITRE ATT&CK mapping |
 | Kali Linux | Attacker |
-| Metasploitable 2 | Victim, runs the Wazuh agent |
+| Victim VM | Victim, runs the Wazuh agent |
 
 ## Status
  
